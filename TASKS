@@ -1,23 +1,16 @@
 TASKS:
 
-1. Adicionar portfolio no header.
- - O portfolio deve ser inserido no header após "Serviços"
-
-2. Adicionar Link das midias sociais.
+1. Adicionar Link das midias sociais.
  - Devem ser criadas as redes sociais que estão faltando e colocar o link respectivo a cada uma.
 
-3. Editar informações do Portfolio e refatorar.
+2. Editar informações do Portfolio e refatorar.
  - Refatorar o código do portfolio.
 
-4. Adicionar a propriedade de quebra de texto nos depoimentos
- - hyphens: auto; /* ✅ Quebra elegante */
-  word-break: break-word;
-
-5. Corrigir Bug do formulário e passar a API para Giovana.
+3. Corrigir Bug do formulário e passar a API para Giovana.
  - Aplicar as correções no form para desbugar o modal e passar o site da API, o login da API e a planilha pra ela abrir no e-mail corporativo.
 
-6. Refatoração
+4. Refatoração
  - Refatorar todo o código do site e remover comentários.
 
-7. Deploy
+5. Deploy
  - Realizar deploy pelo Github Page para testes, após isso, realizar o contrato de uma hospedagem para que ela coloque o site ao ar com um .com.br válido.

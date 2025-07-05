@@ -476,6 +476,8 @@ nav ul li a:focus {
   box-shadow: 0 6px 14px rgba(195, 157, 151, 0.5);
   transition: transform 0.3s ease;
   cursor: default;
+  hyphens: auto;
+  word-break: break-word;
 }
 
 .depoimento-card:hover {
