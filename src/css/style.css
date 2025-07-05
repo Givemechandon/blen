@@ -1,0 +1,543 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: #000;
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  font-family: "Playfair Display", serif;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+  cursor: default;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #f7e9df;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #f6dccb;
+}
+
+/* Banner - Slideshow */
+.banner {
+  position: relative;
+  overflow: hidden;
+  max-height: 550px;
+  margin-bottom: 3rem;
+}
+
+.slideshow-container {
+  position: relative;
+  height: 550px;
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 550px;
+  animation: fade 1s ease;
+  user-select: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  transform: translateY(-50%);
+  color: #f7e9df;
+  max-width: 600px;
+  font-family: "Playfair Display", serif;
+  user-select: none;
+}
+
+.slide-text h1 {
+  /* color: #000; */
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+}
+
+.slide-text p {
+  /* color: #000; */
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+/* Navegação do slideshow */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  color: #f7e9df;
+  font-weight: bold;
+  font-size: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(195, 157, 151, 0.9);
+}
+
+.prev {
+  left: 1rem;
+}
+
+.next {
+  right: 1rem;
+}
+
+/* Dots (bolinhas) do slideshow */
+.dots-container {
+  text-align: center;
+  padding: 1rem 0;
+  background: #000;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 6px;
+  background-color: #c39d97;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #f6dccb;
+}
+
+/* Sobre */
+.sobre {
+  padding-bottom: 3rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #222;
+}
+
+.sobre h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+/* Serviços */
+.servicos {
+  padding-bottom: 3rem;
+}
+
+.servicos h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #000;
+  color: #f7e9df;
+  width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(195, 157, 151, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+  padding: 1rem 1.2rem 0.5rem;
+}
+
+.card p {
+  padding: 0 1.2rem 1.2rem;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+/* Hover suave nos cards */
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 10px 25px rgba(246, 220, 203, 0.7);
+  opacity: 90%;
+}
+
+/* Depoimentos */
+.depoimentos {
+  padding-bottom: 3rem;
+  background: #cb9f8a;
+  border-radius: 16px;
+}
+
+.depoimentos h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: #000;
+  text-align: center;
+}
+
+.depoimento-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.depoimento-card {
+  background: #000;
+  color: #f7e9df;
+  width: 280px;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  font-style: italic;
+  box-shadow: 0 6px 14px rgba(195, 157, 151, 0.5);
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.depoimento-card:hover {
+  transform: scale(1.05);
+}
+
+/* Contato */
+.contato {
+  padding-bottom: 4rem;
+}
+
+.contato h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: #000;
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #c39d97;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+  font-family: "Roboto", sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #f6dccb;
+  outline: none;
+}
+
+button {
+  background: #000;
+  color: #f7e9df;
+  border: none;
+  padding: 14px 20px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #c39d97;
+  color: #000;
+}
+
+/* Footer */
+footer {
+  background: #000;
+  color: #f7e9df;
+  text-align: center;
+  padding: 0.7rem 0;
+  font-size: 0.9rem;
+}
+
+/* Animação fade do slideshow */
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+  nav ul {
+    gap: 1rem;
+  }
+
+  .cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .slide-text h1 {
+    font-size: 2rem;
+  }
+
+  .slide-text p {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    background: #111;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    padding: 1rem 1rem;
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  header .container {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .depoimento-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Modal fundo escurecido */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* escurece a tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Quando o modal estiver visível */
+.modal.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Caixa interna do modal */
+.modal-content {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: bounceIn 0.6s ease;
+}
+
+/* Animação do pulo */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2e7d32;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Responsividade */
+  @media (max-width: 480px) {
+    .modal-content {
+      padding: 1.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .modal-content h2 {
+      font-size: 1.25rem;
+    }
+
+    .modal-content p {
+      font-size: 0.95rem;
+    }
+
+    .close-btn {
+      font-size: 20px;
+      top: 5px;
+      right: 10px;
+    }
+  }
+  .checkmark {
+  width: 72px;
+  height: 72px;
+  stroke: #2ecc71;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke: #2ecc71;
+  animation: stroke 0.6s ease-out forwards;
+}
+
+.checkmark-check {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke: #2ecc71;
+  animation: stroke 0.4s 0.6s ease-out forwards;
+}
+
+@keyframes stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
