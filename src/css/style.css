@@ -387,9 +387,12 @@ nav ul li a:focus {
 }
 
 .project-info p {
-  font-size: 1.1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.9rem;
   line-height: 1.3;
-  color: #000;
+  color: #2b2b2b;
+  hyphens: auto; 
+  word-break: break-word;
 }
 
 /* Botões modernos e discretos */
