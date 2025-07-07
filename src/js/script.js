@@ -56,7 +56,7 @@ showSlide(slideIndex);
 // Animação suave ao rolar a página
 window.addEventListener("scroll", () => {
   const scrollElements = document.querySelectorAll(
-    ".card, .depoimento-card, .sobre, .servicos, .depoimentos, .contato"
+    ".card, .depoimento-card, .sobre, .bloco-horizontal, .servicos, .depoimentos, .contato, .portfolio, .carousel-slide, .project-info , .estatisticas, .item-est, .fale-conosco-section, .formulario, .modal-confirm, .modal-content, .btn-fechar-modal"
   );
   scrollElements.forEach((el) => {
     const elementTop = el.getBoundingClientRect().top;
@@ -73,46 +73,59 @@ window.addEventListener("scroll", () => {
   });
 });
 
+const form = document.getElementById('formFaleConosco');
+  const modal = document.getElementById('modalConfirm');
+  const btnFecharModal = document.getElementById('btnFecharModal');
 
-document.querySelector("form").addEventListener("submit", async function (e) {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const form = this;
-    const formData = new FormData(form);
-    const dados = Object.fromEntries(formData.entries());
+    // Criar objeto com dados do formulário
+    const formData = {
+      nome: form.nome.value.trim(),
+      email: form.email.value.trim(),
+      telefone: form.telefone.value.trim(),
+      mensagem: form.mensagem.value.trim(),
+    };
+
+    // Validação básica (já que tem required no HTML, só para garantir)
+    if (!formData.nome || !formData.email) {
+      alert('Por favor, preencha os campos obrigatórios: nome e e-mail.');
+      return;
+    }
 
     try {
-      const response = await fetch("https://api.sheetmonkey.io/form/3UVumqdnc8ANzRV8Yf9wdn", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dados)
+      // Enviar dados para a API do Sheet Monkey via POST
+      const response = await fetch('https://api.sheetmonkey.io/form/3UVumqdnc8ANzRV8Yf9wdn', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
 
-      if (!response.ok) throw new Error("Erro no envio");
+      if (!response.ok) {
+        throw new Error('Erro ao enviar formulário. Tente novamente mais tarde.');
+      }
 
-      form.reset(); // Limpa o formulário
-      mostrarModal(); // Mostra o modal
-    } catch (erro) {
-      alert("Erro ao enviar o formulário.");
-      console.error(erro);
+      // Resetar formulário após sucesso
+      form.reset();
+
+      // Mostrar modal de confirmação
+      modal.classList.remove('hidden');
+    } catch (error) {
+      alert(error.message);
     }
   });
 
-  function mostrarModal() {
-    const modal = document.getElementById("modal");
-    modal.classList.remove("hidden");
-    modal.classList.add("show");
+  // Fechar modal ao clicar no botão
+  btnFecharModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
 
-    // Fechar automaticamente depois de 4 segundos
-    setTimeout(() => {
-      modal.classList.remove("show");
-      modal.classList.add("hidden");
-    }, 5000);
-  }
-
-  // Botão fechar manual
-  document.querySelector(".close-btn").addEventListener("click", () => {
-    const modal = document.getElementById("modal");
-    modal.classList.remove("show");
-    modal.classList.add("hidden");
+  // Opcional: fechar modal clicando fora da caixa
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
   });

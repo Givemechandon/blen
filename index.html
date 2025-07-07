@@ -53,7 +53,7 @@
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
             <li><a href="#depoimentos">Depoimentos</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#fale-conosco">Contato</a></li>
           </ul>
         </nav>
         <div class="social-links">
@@ -170,41 +170,53 @@
 
       <div class="carousel">
         <div class="carousel-track">
-          <!-- Slide 1 -->
           <div class="carousel-slide">
             <img src="/assets/project1.jpg" alt="Projeto 1" />
             <div class="project-info">
               <h2>Vava Barber</h2>
               <p>
-                Para a Vava Barber, barbearia tradicional e referência em São Paulo, desenvolvemos uma identidade visual moderna que respeita suas raízes históricas. Alinhamos estratégias de marketing digital e branding para fortalecer a conexão com a comunidade local e ampliar sua visibilidade online. Nossa consultoria estratégica ajudou a posicionar a barbearia como sinônimo de qualidade e tradição, mantendo seu legado vivo no mercado competitivo atual.
+                Para a Vava Barber, barbearia tradicional e referência em São
+                Paulo, desenvolvemos uma identidade visual moderna que respeita
+                suas raízes históricas. Alinhamos estratégias de marketing
+                digital e branding para fortalecer a conexão com a comunidade
+                local e ampliar sua visibilidade online. Nossa consultoria
+                estratégica ajudou a posicionar a barbearia como sinônimo de
+                qualidade e tradição, mantendo seu legado vivo no mercado
+                competitivo atual.
               </p>
             </div>
           </div>
-
-          <!-- Slide 2 -->
           <div class="carousel-slide">
             <img src="/assets/project2.jpg" alt="Projeto 2" />
             <div class="project-info">
               <h2>Tresa Podologia</h2>
               <p>
-                Desenvolvemos para a Tresapodologia uma estratégia de marketing digital focada em fortalecer sua autoridade no segmento de podologia. Unimos design, branding e conteúdo educativo para destacar a expertise da clínica e gerar maior conexão com o público. Criamos campanhas personalizadas que aumentaram o engajamento e a presença online. Nossa consultoria estratégica orientou ações para ampliar o alcance e atrair novos pacientes.
+                Desenvolvemos para a Tresapodologia uma estratégia de marketing
+                digital focada em fortalecer sua autoridade no segmento de
+                podologia. Unimos design, branding e conteúdo educativo para
+                destacar a expertise da clínica e gerar maior conexão com o
+                público. Criamos campanhas personalizadas que aumentaram o
+                engajamento e a presença online. Nossa consultoria estratégica
+                orientou ações para ampliar o alcance e atrair novos pacientes.
               </p>
             </div>
           </div>
-
-          <!-- Slide 3 -->
           <div class="carousel-slide">
             <img src="/assets/project3.jpg" alt="Projeto 3" />
             <div class="project-info">
               <h2>Perini ScooterCare</h2>
               <p>
-                Criamos uma estratégia de marketing digital e branding para a Perini ScooterCare, garage referência em Jundiaí para lavagem e limpeza de motos. Com design personalizado e comunicação alinhada ao público local, fortalecemos a presença online da marca e destacamos sua reputação de qualidade e confiança. Nossa consultoria estratégica contribuiu para otimizar o atendimento e ampliar a carteira de clientes na região.
+                Criamos uma estratégia de marketing digital e branding para a
+                Perini ScooterCare, garage referência em Jundiaí para lavagem e
+                limpeza de motos. Com design personalizado e comunicação
+                alinhada ao público local, fortalecemos a presença online da
+                marca e destacamos sua reputação de qualidade e confiança. Nossa
+                consultoria estratégica contribuiu para otimizar o atendimento e
+                ampliar a carteira de clientes na região.
               </p>
             </div>
           </div>
         </div>
-
-        <!-- Botões -->
         <div class="carousel-nav">
           <button class="prev">&#10094;</button>
           <button class="next">&#10095;</button>
@@ -220,7 +232,7 @@
             "A Blen transformou completamente nossa presença digital. Resultados
             incríveis!"
           </p>
-          <br>
+          <br />
           <span>- Biros Hair.</span>
         </div>
         <div class="depoimento-card">
@@ -241,36 +253,83 @@
       </div>
     </section>
 
-    <section id="contato" class="contato container">
-      <h2>Fale Conosco</h2>
-      <form>
-        <input type="text" name="nome" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
-        <textarea
-          name="mensagem"
-          placeholder="Sua dúvida ou proposta!"
-          required
-        ></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-      <div id="modal" class="modal hidden">
-        <div class="modal-content">
-          <span class="close-btn">&times;</span>
+    <section class="estatisticas">
+      <div class="container-estatisticas">
+        <div class="item-est">
+          <h4>+7</h4>
+          <p>Clientes satisfeitos</p>
+        </div>
+        <div class="item-est">
+          <h4>1 ano</h4>
+          <p>de experiência</p>
+        </div>
+        <div class="item-est">
+          <h4>4.9/5</h4>
+          <p>Avaliação média</p>
+        </div>
+      </div>
+    </section>
 
-          <!-- Ícone de check animado -->
-          <svg class="checkmark" viewBox="0 0 52 52">
-            <circle
-              class="checkmark-circle"
-              cx="26"
-              cy="26"
-              r="25"
-              fill="none"
+    <section class="parallax-banner">
+      <div class="overlay-parallax">
+        <h3>Transformamos ideias em experiências.</h3>
+      </div>
+    </section>
+
+    <section id="fale-conosco" class="fale-conosco-section">
+      <div class="container">
+        <h2>Fale Conosco</h2>
+        <p>
+          Solicite um orçamento sem compromisso. Estamos prontos para ajudar
+          você!
+        </p>
+        <form id="formFaleConosco" autocomplete="off" novalidate>
+          <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              placeholder="Seu nome"
             />
-            <path class="checkmark-check" fill="none" d="M14 27l7 7 17-17" />
-          </svg>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="seu@email.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              placeholder="(99) 99999-9999"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="4"
+              placeholder="Escreva sua mensagem aqui"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Enviar</button>
+        </form>
+      </div>
 
-          <h2>Enviado com sucesso!</h2>
-          <p>Obrigado pelo contato. Responderemos em breve.</p>
+      <div id="modalConfirm" class="modal-confirm hidden">
+        <div class="modal-content">
+          <p>Obrigado! Sua mensagem foi enviada com sucesso.</p>
+          <button id="btnFecharModal" class="btn-close-modal">Fechar</button>
         </div>
       </div>
     </section>
@@ -281,6 +340,5 @@
 
     <script src="/src/js/script.js"></script>
     <script src="/src/js/slide.js" defer></script>
-
   </body>
 </html>
