@@ -636,7 +636,7 @@ textarea {
 }
 
 .parallax-banner {
-  background-image: url('/assets/23563478-d213-4089-a1df-91e75b3eb1a6.png'); /* substitua por uma imagem elegante e relevante */
+  background-image: url('assets/23563478-d213-4089-a1df-91e75b3eb1a6.png');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
