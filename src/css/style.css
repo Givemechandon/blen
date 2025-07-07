@@ -648,7 +648,7 @@ textarea {
 }
 
 .overlay-parallax {
-  background-color: rgba(0, 0, 0, 0.5); /* escurece para dar contraste ao texto */
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
   display: flex;
